@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="restroom_form_view" model="ir.ui.view">
+            <field name="name">Restroom Log Form View</field>
+            <field name="model">restroom.log</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_done" string="PCQI" type="object" states="pcqi"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <h1>Restroom Maintenance Log</h1>
+                        <group>
+                            <group>
+                                <field name="bathroom"/>
+                                <field name="id" string="Maintenance Log"/>
+                            </group>
+                            <group>
+                                <field name="create_date" readonly="True"/>
+                                <field name="create_uid" readonly="True"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="is_toilets_cleaned"/>
+                                <field name="is_mirrors_cleaned"/>
+                                <field name="is_sinks_cleaned"/>
+                                <field name="is_floors_mopped"/>
+                                <field name="is_floors_swept"/>
+                            </group>
+                            <group>
+                                <field name="toilet_paper"/>
+                                <field name="paper_towels"/>
+                                <field name="seat_covers"/>
+                                <field name="soap_dispenser"/>
+                                <field name="trash"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="restroom_tree_view" model="ir.ui.view">
+            <field name="name">Restroom Log Tree View</field>
+            <field name="model">restroom.log</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="bathroom"/>
+                    <field name="id" string="Maintenance Log"/>
+                    <field name="create_date"/>
+                    <field name="create_uid"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="restroom_action" model="ir.actions.act_window">
+            <field name="name">Restroom Maintenance Log</field>
+            <field name="res_model">restroom.log</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

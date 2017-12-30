@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="menu_fsma_root" name="FSMA" sequence="90"
+                  web_icon="fsma_controls,static/description/icon.png"/>
+
+        <menuitem id="menu_restroom_log" name="Restroom Maintenance log" parent="menu_fsma_root"
+                  action="restroom_action"/>
+
+        <menuitem id="menu_ssop" name="SSOP" parent="menu_fsma_root"/>
+        <menuitem id="menu_pre_production" name="Prod Pre-OP Checklist" parent="menu_ssop"
+                  action="pre_production_action"/>
+        <menuitem id="menu_production" name="Operational Checklist" parent="menu_ssop"
+                  action="production_action"/>
+        <menuitem id="menu_post_production" name="Prod OP Checklist" parent="menu_ssop"
+                  action="post_production_action"/>
+
+    </data>
+</odoo>

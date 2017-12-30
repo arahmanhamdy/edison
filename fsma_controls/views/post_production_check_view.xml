@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="post_production_form_view" model="ir.ui.view">
+            <field name="name">Post Production Form View</field>
+            <field name="model">post.production.check</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h1>Production Operational Checklist</h1>
+                        <group>
+                            <group>
+                                <field name="id"/>
+                            </group>
+                            <group>
+                                <field name="create_date" readonly="True"/>
+                                <field name="create_uid" readonly="True"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="cGMP">
+                                <group>
+                                    <group>
+                                        <field name='poor_health'/>
+                                        <field name='designated_uniform'/>
+                                        <field name='handle_with_care'/>
+                                        <field name='use_sanitizer'/>
+                                        <field name='outer_garments_requirments'/>
+                                    </group>
+                                    <group>
+                                        <field name='no_smoking'/>
+                                        <field name='designated_area_for_meds'/>
+                                        <field name='supply_products'/>
+                                        <field name='hand_wash_facilities'/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="SSOP">
+                                <group>
+                                    <field name='prevent_contamination'/>
+                                    <field name='equipment_are_cleaned_and_sanitized'/>
+                                </group>
+                            </page>
+                            <page string="Equipment">
+                                <group>
+                                    <group>
+                                        <field name='wipe_dry_equipment'/>
+                                        <field name='ensure_sanitizing_conveyor_belt'/>
+                                        <field name='maintain_inventory'/>
+                                        <field name='malfunctioning_pieces'/>
+                                    </group>
+                                    <group>
+                                        <field name='disassemble_clean_sanitize'/>
+                                        <field name='disassemble_parts_and_sanitize'/>
+                                        <field name='remove_debris'/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Other">
+                                <group>
+                                    <group>
+                                        <field name='prevent_cross_contact'/>
+                                        <field name='maintain_log'/>
+                                        <field name='maintain_h2o2'/>
+                                        <field name='cip_procedures'/>
+                                        <field name='clean_and_sanitize_equipment'/>
+                                        <field name='pallets'/>
+                                    </group>
+                                    <group>
+                                        <field name='production_supplies'/>
+                                        <field name='maintain_bags'/>
+                                        <field name='hygiene_practices_and_procedures'/>
+                                        <field name='identifiy_issues'/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="post_prodcution_tree_view" model="ir.ui.view">
+            <field name="name">Post Production Tree View</field>
+            <field name="model">post.production.check</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id"/>
+                    <field name="create_date"/>
+                    <field name="create_uid"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="post_production_action" model="ir.actions.act_window">
+            <field name="name">Prod Daily OP Checklist</field>
+            <field name="res_model">post.production.check</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

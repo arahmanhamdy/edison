@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="pre_production_form_view" model="ir.ui.view">
+            <field name="name">Pre Production Form View</field>
+            <field name="model">pre.production.check</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h1>Pre-Operational Checklist</h1>
+                        <group>
+                            <group>
+                                <field name="id"/>
+                            </group>
+                            <group>
+                                <field name="create_date" readonly="True"/>
+                                <field name="create_uid" readonly="True"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="SSOP">
+                                <group>
+                                    <group>
+                                        <field name='sanitary_procedure'/>
+                                        <field name='food_contact_surfaces'/>
+                                        <field name='spray_equipment_with_water'/>
+                                        <field name='label_and_store_cleaning_materials'/>
+                                        <field name='atp_swab'/>
+                                        <field name='transport_equipment'/>
+                                        <field name='labeling_cleaners'/>
+                                        <field name='examine_surfaces'/>
+                                        <field name='sanitizing_equipment'/>
+                                        <field name='remove_debris'/>
+                                        <field name='non_food_contact_surfaces'/>
+                                    </group>
+                                    <group>
+                                        <field name='inspect_for_missing_parts'/>
+                                        <field name='cover_all_electrical_components'/>
+                                        <field name='inspect_pre_operational_equipment'/>
+                                        <field name='apply_cleaner'/>
+                                        <field name='scrubbing_equipment'/>
+                                        <field name='approved_sanitizer'/>
+                                        <field name='spray_equipment_utensils_with_water'/>
+                                        <field name='use_appropriate_tools'/>
+                                        <field name='bulk_product_and_packaging_storage'/>
+                                        <field name='re_assemble_equipment'/>
+                                        <field name='unacceptable_results'/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Environmental">
+                                <group>
+                                    <group>
+                                        <field name='wipe_production_room_work_tables'/>
+                                        <field name='hang_hose'/>
+                                        <field name='sweep_and_mop_production_floors'/>
+                                        <field name='wipe_down_any_dust'/>
+                                    </group>
+                                    <group>
+                                        <field name='sweep_mats_and_mop_as_needed'/>
+                                        <field name='wipe_down_all_hand_wash_sinks_daily'/>
+                                        <field name='damp_mop_floor_and_wipe_walls'/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Other">
+                                <group>
+                                    <group>
+                                        <field name='allergen_preventive_controls'/>
+                                        <field name='empty_trash_bins'/>
+                                        <field name='wipe_production_room'/>
+                                        <field name='wash_trash_bins'/>
+                                        <field name='in_house_monitoring'/>
+                                    </group>
+                                    <group>
+                                        <field name='good_manufacturing_practices'/>
+                                        <field name='sanitize_conveyor_belt'/>
+                                        <field name='sanitize_all_parts'/>
+                                        <field name='disassemble_clean_and_sanitize'/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="pre_prodcution_tree_view" model="ir.ui.view">
+            <field name="name">Pre Production Tree View</field>
+            <field name="model">pre.production.check</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id"/>
+                    <field name="create_date"/>
+                    <field name="create_uid"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="pre_production_action" model="ir.actions.act_window">
+            <field name="name">Pre-Operational Checklist</field>
+            <field name="res_model">pre.production.check</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>
