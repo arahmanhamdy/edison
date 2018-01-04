@@ -7,6 +7,12 @@
         <menuitem id="menu_restroom_log" name="Restroom Maintenance log" parent="menu_fsma_root"
                   action="restroom_action"/>
 
+        <menuitem id="menu_lab_submission_form" name="Lab Submission Form" parent="menu_fsma_root"
+                  action="lab_submission_action"/>
+
+        <menuitem id="menu_foreign_material" name="Foreign Material" parent="menu_fsma_root"
+                  action="foreign_material_action"/>
+
         <menuitem id="menu_ssop" name="SSOP" parent="menu_fsma_root"/>
         <menuitem id="menu_pre_production" name="Prod Pre-OP Checklist" parent="menu_ssop"
                   action="pre_production_action"/>

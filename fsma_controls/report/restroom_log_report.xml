@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+            id="restroom_log_report"
+            string="Restroom Log"
+            model="restroom.log"
+            report_type="qweb-html"
+            name="fsma_controls.restroom_log_template"
+            file="fsma_controls.restroom_log_template"
+            print_report_name="'Restroom Log - %s' % object.id"
+    />
+
+    <template id="restroom_log_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page" style="page-break-inside: avoid;">
+                        <div class="row">
+                            <div name="address" class="col-xs-5 col-xs-offset-7"/>
+                        </div>
+                        <h2>
+                            <strong>Restroom Maintenance Log</strong>
+                        </h2>
+                        <div class="clearfix"/>
+                        <div class="row mt32 mb32">
+                            <div class="col-xs-6 pull-left">
+                                <strong>Bathroom #</strong>
+                                <p>
+                                    <t t-esc="doc.bathroom"/>
+                                </p>
+                                <strong>Maintenance Log</strong>
+                                <p>
+                                    <t t-esc="doc.id"/>
+                                </p>
+                            </div>
+                            <div class="col-xs-6 pull-right">
+                                <strong>Created by</strong>
+                                <p>
+                                    <t t-esc="doc.create_uid.name"/>
+                                </p>
+                                <strong>Created on</strong>
+                                <p>
+                                    <t t-esc="doc.create_date"/>
+                                </p>
+                            </div>
+                        </div>
+
+                        <h3>
+                            <strong>Information</strong>
+                        </h3>
+
+                        <div class="row">
+                            <div class="col-xs-6 pull-left" style="font-size:13px">
+                                <p t-if="doc.is_toilets_cleaned"><b>Toilets Cleaned :</b>Yes
+                                </p>
+                                <p t-if="not doc.is_toilets_cleaned"><b>Toilets Cleaned :</b>No
+                                </p>
+
+                                <p t-if="doc.is_mirrors_cleaned"><b>Mirrors Cleaned :</b>Yes
+                                </p>
+                                <p t-if="not doc.is_mirrors_cleaned"><b>Mirrors Cleaned :</b>No
+                                </p>
+
+                                <p t-if="doc.is_sinks_cleaned"><b>Sinks Cleaned :</b>Yes
+                                </p>
+                                <p t-if="not doc.is_sinks_cleaned"><b>Sinks Cleaned :</b>No
+                                </p>
+
+                                <p t-if="doc.is_floors_mopped"><b>Floors Mopped :</b>Yes
+                                </p>
+                                <p t-if="not doc.is_floors_mopped"><b>Floors Mopped :</b>No
+                                </p>
+
+                                <p t-if="doc.is_floors_swept"><b>Floors Swept :</b>Yes
+                                </p>
+                                <p t-if="not doc.is_floors_swept"><b>Floors Swept :</b>No
+                                </p>
+                            </div>
+                            <div class="col-xs-6 pull-right" style="font-size:13px">
+                                <p>
+                                    <b>Toilet paper :</b>
+                                    <span t-field="doc.toilet_paper"/>
+                                </p>
+                                <p>
+                                    <b>Paper towels :</b>
+                                    <span t-field="doc.paper_towels"/>
+                                </p>
+                                <p>
+                                    <b>Seat Covers :</b>
+                                    <span t-field="doc.seat_covers"/>
+                                </p>
+                                <p>
+                                    <b>Soap Dispenser :</b>
+                                    <span t-field="doc.soap_dispenser"/>
+                                </p>
+                                <p>
+                                    <b>Trash :</b>
+                                    <span t-field="doc.trash"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

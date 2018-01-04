@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="stock_picking_form_view" model="ir.ui.view">
+            <field name="name">FSMA Stock Picking Form View</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[last()]" position="after">
+                    <page string="FSMA">
+                        <group>
+                            <group>
+                                <field name='lab_submission_id'/>
+                            </group>
+                            <group>
+                                <field name='allergen'/>
+                                <field name='photo_upload'/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <p>Type of Transportation</p>
+                                <field name='semi_trailer'/>
+                                <field name='common_carrier'/>
+                                <field name='ocean_container'/>
+                                <field name='personal_vehicle'/>
+                            </group>
+                            <group>
+                                <p>Vehicle was inspected and found to be clean and free of:</p>
+                                <field name='foreign_odors'/>
+                                <field name='moisture'/>
+                                <field name='pests'/>
+                                <field name='broken_glass'/>
+                                <field name='substances'/>
+                                <field name='holes'/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <p>Pallet and product were inspected visually &amp; with a black light and are free of
+                                </p>
+                                <field name='pallet_damage'/>
+                                <field name='signs_of_contamination'/>
+                            </group>
+                            <group>
+                                <p>Damaged Product</p>
+                                <field name='number_of_broken_torn_packaging'/>
+                                <field name='corrective_action'/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,3 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_partner_tag_user,Partner tag,model_partner_tag,sales_team.group_sale_salesman,1,1,1,1
-access_partner_tag_department_user,Partner tag Department,model_partner_tag_department,sales_team.group_sale_salesman,1,0,0,0
+access_foreign_material_user,Foreign Material User,model_foreign_material,fsma_user,1,1,1,1
+access_lab_submission_user,Lab Submission User,model_lab_submission,fsma_user,1,1,1,1
+access_post_production_check_user,Post Production Check User,model_post_production_check,fsma_user,1,1,1,1
+access_pre_production_check_user,Pre Production Check User,model_pre_production_check,fsma_user,1,1,1,1
+access_production_check_user,Production Check User,model_production_check,fsma_user,1,1,1,1
+access_restroom_log_user,Restroom Log User,model_restroom_log,fsma_user,1,1,1,1

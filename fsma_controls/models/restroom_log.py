@@ -23,7 +23,7 @@ class RestroomLog(models.Model):
     trash = fields.Selection([("chk", "Checked"), ("emp", "Emptied")], "Trash")
 
     state = fields.Selection([("pcqi", "PCQI"), ("done", "Done")], default="pcqi")
-    pcqi_user_id = fields.Many2one("res.user", "PCQI By", readonly=True)
+    pcqi_user_id = fields.Many2one("res.users", "PCQI By", readonly=True)
     pcqi_date = fields.Datetime("PCQI On", readonly=True)
 
     @api.multi

@@ -7,7 +7,8 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
-                        <button name="action_done" string="PCQI" type="object" states="pcqi"/>
+                        <button name="action_done" string="PCQI" groups="fsma_controls.fsma_manager"
+                                type="object" states="pcqi"/>
                         <field name="state" widget="statusbar"/>
                     </header>
                     <sheet>
@@ -16,6 +17,8 @@
                             <group>
                                 <field name="bathroom"/>
                                 <field name="id" string="Maintenance Log"/>
+                                <field name="pcqi_user_id" attrs="{'invisible': [('pcqi_user_id', '=', False)]}"/>
+                                <field name="pcqi_date" attrs="{'invisible': [('pcqi_date', '=', False)]}"/>
                             </group>
                             <group>
                                 <field name="create_date" readonly="True"/>

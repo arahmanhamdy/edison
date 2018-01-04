@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <template id="report_delivery_document" inherit_id="stock.report_delivery_document">
+        <xpath expr="//table" position="after">
+            <h4>Type of Transportation</h4>
+            <table class="table table-bordered">
+                <tr>
+                    <td class="text-center">
+                        <strong>Semi-Trailer</strong>
+                    </td>
+                    <td class="text-center">
+                        <strong>Common Carrier</strong>
+                    </td>
+                    <td class="text-center">
+                        <strong>Ocean Container</strong>
+                    </td>
+                    <td class="text-center">
+                        <strong>Personal Vehicle</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">
+                        <span t-if="o.semi_trailer">&#9745;</span>
+                        <span t-if="not o.semi_trailer">&#9744;</span>
+                    </td>
+                    <td class="text-center">
+                        <span t-if="o.common_carrier">&#9745;</span>
+                        <span t-if="not o.common_carrier">&#9744;</span>
+                    </td>
+                    <td class="text-center">
+                        <span t-if="o.ocean_container">&#9745;</span>
+                        <span t-if="not o.ocean_container">&#9744;</span>
+                    </td>
+                    <td class="text-center">
+                        <span t-if="o.personal_vehicle">&#9745;</span>
+                        <span t-if="not o.personal_vehicle">&#9744;</span>
+                    </td>
+                </tr>
+            </table>
+            <h4>Vehicle was inspected and found to be clean and free of:</h4>
+            <table class="table table-bordered">
+                <tr>
+                    <td class="text-center">
+                        <strong>Foreign Odors</strong>
+                    </td>
+                    <td class="text-center">
+                        <strong>Moisture</strong>
+                    </td>
+                    <td class="text-center">
+                        <strong>Pests</strong>
+                    </td>
+                    <td class="text-center">
+                        <strong>Broken Glass</strong>
+                    </td>
+                    <td class="text-center">
+                        <strong>Substances or Residues</strong>
+                    </td>
+                    <td class="text-center">
+                        <strong>Holes</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">
+                        <span t-if="o.foreign_odors">&#9745;</span>
+                        <span t-if="not o.foreign_odors">&#9744;</span>
+                    </td>
+                    <td class="text-center">
+                        <span t-if="o.moisture">&#9745;</span>
+                        <span t-if="not o.moisture">&#9744;</span>
+                    </td>
+                    <td class="text-center">
+                        <span t-if="o.pests">&#9745;</span>
+                        <span t-if="not o.pests">&#9744;</span>
+                    </td>
+                    <td class="text-center">
+                        <span t-if="o.broken_glass">&#9745;</span>
+                        <span t-if="not o.broken_glass">&#9744;</span>
+                    </td>
+                    <td class="text-center">
+                        <span t-if="o.substances">&#9745;</span>
+                        <span t-if="not o.substances">&#9744;</span>
+                    </td>
+                    <td class="text-center">
+                        <span t-if="o.holes">&#9745;</span>
+                        <span t-if="not o.holes">&#9744;</span>
+                    </td>
+                </tr>
+            </table>
+            <h4>Pallet and product were inspected visually &amp; with a black light and are free of:</h4>
+            <table class="table table-bordered">
+                <tr>
+                    <td class="text-center">
+                        <strong>Pallet Damage: broken/torn packaging</strong>
+                    </td>
+                    <td class="text-center">
+                        <strong>Signs of contamination and infestation</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">
+                        <span t-if="o.pallet_damage">&#9745;</span>
+                        <span t-if="not o.pallet_damage">&#9744;</span>
+                    </td>
+                    <td class="text-center">
+                        <span t-if="o.signs_of_contamination">&#9745;</span>
+                        <span t-if="not o.signs_of_contamination">&#9744;</span>
+                    </td>
+                </tr>
+            </table>
+            <h4>Damaged Product:</h4>
+            <table class="table table-bordered">
+                <tr>
+                    <td class="text-center">
+                        <strong>Number of broken/torn packaging</strong>
+                    </td>
+                    <td class="text-center">
+                        <strong>Corrective Action</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">
+                        <span t-field="o.number_of_broken_torn_packaging"/>
+                    </td>
+                    <td class="text-center">
+                        <span t-field="o.corrective_action"/>
+                    </td>
+                </tr>
+            </table>
+        </xpath>
+    </template>
+</odoo>
